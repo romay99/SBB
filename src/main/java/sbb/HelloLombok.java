@@ -1,4 +1,4 @@
-package hello.itemservice;
+package sbb;
 
 
 import lombok.Getter;

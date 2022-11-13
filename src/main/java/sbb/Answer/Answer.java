@@ -1,5 +1,6 @@
-package hello.itemservice;
+package sbb.Answer;
 
+import sbb.Question.Question;
 import lombok.Getter;
 import lombok.Setter;
 

@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
 
@@ -24,7 +25,7 @@ public class Question {
     @Column(columnDefinition = "TEXT")
     private String content;
 
-    private LocalTime creatDate;
+    private LocalDateTime creatDate;
 
     @OneToMany(mappedBy = "question", cascade = CascadeType.REMOVE)
     private List<Answer> answerList;

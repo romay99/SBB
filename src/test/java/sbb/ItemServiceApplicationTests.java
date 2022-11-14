@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.transaction.Transactional;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,17 +25,13 @@ class ItemServiceApplicationTests {
 	@Autowired
 	private AnswerRepository answerRepository;
 
-	@Transactional
+
 	@Test
 	void testJpa(){
-		Optional<Question> oq = this.questionRepository.findById(3);
-		assertTrue(oq.isPresent());
-		Question q = oq.get();
-
-		List<Answer> answerList = q.getAnswerList();
-
-		assertEquals(1, answerList.size());
-		assertEquals("네 자동으로 생성됩니다.", answerList.get(0).getContent());
-
+		Question q1 = new Question();
+		q1.setSubject("ㅎㅇㅎㅇㅎㅇ");
+		q1.setContent("이거머임 ㅋㅋㅋ 신기하네 ㅋㅋ");
+		q1.setCreatDate(LocalDateTime.now());
+		this.questionRepository.save(q1);
 	}
 }

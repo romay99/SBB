@@ -15,4 +15,9 @@ public class MainContorller {
         return "HI!";
     }
 
+    @RequestMapping("/")
+    public String root(){
+        return "redirect:/question/list";
+    }
+
 }

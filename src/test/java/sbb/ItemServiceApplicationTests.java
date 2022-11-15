@@ -27,11 +27,7 @@ class ItemServiceApplicationTests {
 
 
 	@Test
-	void testJpa(){
-		Question q1 = new Question();
-		q1.setSubject("ㅎㅇㅎㅇㅎㅇ");
-		q1.setContent("이거머임 ㅋㅋㅋ 신기하네 ㅋㅋ");
-		q1.setCreatDate(LocalDateTime.now());
-		this.questionRepository.save(q1);
+	void testJpa() {
+		answerRepository.delete(answerRepository.findById(98).get());
 	}
 }
